@@ -1,0 +1,22 @@
+#persona-welcome{width:720px;max-width:94vw;padding:40px;background:#f8f7f3;border-top:5px solid #284a82}
+#persona-welcome>p:not(.eyebrow){font-size:14px;line-height:1.7;color:#566474;max-width:580px}
+.persona-options{display:grid;gap:12px;margin:28px 0}
+.persona-options button{display:grid;grid-template-columns:80px 1fr;gap:5px 18px;text-align:left;padding:18px;border:1px solid #c6ced6;background:#efeee8;transition:background .2s,transform .2s}
+.persona-options button:hover{background:#dfe6ed;transform:translateX(4px)}
+.persona-options span{grid-row:span 2;font-family:Georgia,serif;font-size:23px;align-self:center}
+.persona-options strong{font-size:16px}.persona-options small{font-size:12px;color:#566474}
+#persona-welcome .persona-note{font-size:11px}.persona-selector{padding:12px 20px;background:#f0eee7;border-bottom:1px solid #d8dcde}
+.persona-selector label{font-size:11px;margin-right:12px}.persona-selector select{font:inherit;font-size:12px;padding:7px;max-width:100%;background:white;color:#192b50;border:1px solid #b4bec9}
+.persona-selector p{font-size:11px;line-height:1.5;color:#566474;margin:8px 0 0}
+#chat{height:760px}#chat .chat-suggestions button{min-height:35px}
+@media(max-width:560px){#persona-welcome{padding:25px}#persona-welcome h2{font-size:32px}.persona-options button{grid-template-columns:65px 1fr;padding:15px;gap:6px 10px}#chat{margin:auto;max-height:94dvh}.chat-header{padding:18px 20px}}
+@media(prefers-reduced-motion:reduce){.persona-options button{transition:none}.persona-options button:hover{transform:none}}
+
+/* Keep the exit visible while only the conversation scrolls. */
+#chat{overflow:hidden}
+#chat .chat-header{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-shrink:0}
+#chat .chat-close{position:static;display:flex;align-items:center;justify-content:center;gap:8px;width:auto;min-width:78px;height:44px;flex-shrink:0;padding:0 12px;border:1px solid #aeb9c7;border-radius:5px;background:#fff;color:#192b50;font-size:13px;line-height:1}
+#chat .chat-close span{font-size:22px}
+#chat .chat-label,#chat .persona-selector,#chat .chat-suggestions,#chat-form,#chat .chat-footer{flex-shrink:0}
+#chat #messages{min-height:0}
+@media(max-height:600px){#chat .chat-header{padding:10px 16px}#chat .chat-header p{display:none}#chat .persona-selector{padding:6px 16px}#chat .persona-selector p{margin:3px 0}#chat .chat-footer{padding:6px}}

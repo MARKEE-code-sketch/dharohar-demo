@@ -1,0 +1,48 @@
+/* Homepage palette: warm paper, charcoal type and copper accents. */
+:root{--ink:#2e302b;--blue:#80563e;--paper:#f6f2e9;--muted:#6b6a60;--line:#d6d0c3}
+[hidden]{display:none!important}
+body{background:var(--paper);color:var(--ink)}
+.notice{background:#e9e2d4;color:#55564a}
+header{background:#f6f2e9;border-color:#d6d0c3}
+.hero{background:#f0e9dc;color:#2e302b;padding-top:62px}
+.hero::before{display:none}
+.hero .eyebrow{color:#80563e;font-size:12px;letter-spacing:.08em}
+.hero h1{font-size:clamp(43px,5.9vw,88px);line-height:1.08;letter-spacing:-.045em;max-width:1200px}
+.hero h1 em{color:#956a4a;font-style:italic}
+.hero .intro{color:#646459;font-size:15px;line-height:1.8;max-width:570px}
+.hero .button,.button{background:#333b31;color:#faf7ef}
+.hero .button:hover,.button:hover{background:#515e49}
+.ribbon-toolbar{color:#66675b}.ribbon-toolbar button{color:#3c4938;border-color:#b9b6a7}
+.ribbon-toolbar button:hover{background:#ded8ca}.ribbon-card-title{color:#3e4237;font-size:18px}
+.ribbon-card img{border-color:#cfc6b4;box-shadow:0 14px 26px #51453020;filter:sepia(.14) saturate(.75)}
+.ribbon-hint{color:#777669}
+.inline-detective,.inline-puzzle{padding:68px 7%;scroll-margin-top:20px}
+.inline-detective{background:#faf7f0;border-top:1px solid #d6d0c3}
+.activity-heading{max-width:740px;margin-bottom:34px}
+.activity-heading .eyebrow,.puzzle-intro .eyebrow{color:#936843;font-size:12px;letter-spacing:.06em;margin:0 0 14px}
+.activity-heading h2,.puzzle-intro h2{font-family:Georgia,serif;font-size:clamp(35px,4.1vw,58px);line-height:1.12;letter-spacing:-.035em;margin:0 0 18px}
+.activity-heading>p:last-child,.puzzle-intro>p:last-child{font-size:15px;line-height:1.8;color:#69695d;max-width:620px}
+.detective-layout{grid-template-columns:minmax(0,1.6fr) minmax(260px,1fr);gap:6%}
+.detective-scroll{background:#e5ddcc;padding:20px;max-height:650px;border:1px solid #d7cbb8}
+.detective-canvas img{width:100%;max-width:none;display:block}.detective-canvas.enlarged{width:180%}
+.document-spot{background:#374a3b;box-shadow:0 0 0 5px #374a3b22}.document-spot[aria-pressed=true]{background:#9c663b}
+.detective-copy h3{font-size:31px;line-height:1.2}.detective-copy p{font-size:15px;line-height:1.85}
+.detective-copy .detective-note{font-size:11px;line-height:1.8;color:#777669}
+#document-number{font-size:66px;color:#b5a184}
+.detective-source{margin-top:25px;padding:18px 0 0;display:flex;gap:35px;align-items:center;justify-content:space-between}
+.detective-source p{font-size:11px;line-height:1.8;color:#777669;max-width:700px;margin:0}
+.detective-source a{font-size:12px;white-space:nowrap;text-decoration:underline;text-underline-offset:4px}
+.inline-puzzle{background:#e4e6da;border-top:1px solid #cdd0bf;border-bottom:1px solid #cdd0bf}
+.puzzle-intro{max-width:800px;margin-bottom:25px}.puzzle-intro h2{color:#35402f}
+.puzzle-layout{grid-template-columns:minmax(0,1.4fr) minmax(260px,1fr);gap:6%}
+#puzzle-board{margin:0;max-width:780px;padding:12px;gap:8px;background:#c9c7b5;box-shadow:0 18px 38px #343e2d16}
+.puzzle-help{padding-top:0}.puzzle-controls{margin-top:0}.puzzle-controls button{background:#f5f3e9;border-color:#aeb59d;color:#34412c}
+#puzzle-moves{font:28px Georgia,serif;color:#36432e;margin:25px 0 12px}
+#puzzle-status{font-size:14px;max-width:360px;line-height:1.8}
+#puzzle-preview{max-height:none;width:100%}
+.inline-puzzle .primary{display:inline-flex;padding:14px 18px;background:#34412c;color:white;font-size:13px}
+.collection-section{background:#f6f2e9}.ask-section{background:#eae2d5}.ask-mark{color:#b5a68b}
+.chat-label{background:#ebe5d9}.message{background:#eae6dc}.message.user{background:#3b4635;color:white}
+footer{border-color:#d6d0c3}
+@media(max-width:800px){.hero{padding-top:40px}.inline-detective,.inline-puzzle{padding:42px 6%}.detective-layout,.puzzle-layout{grid-template-columns:1fr;gap:28px}.detective-copy{max-width:650px}#document-number{display:none}.detective-source{display:block}.detective-source a{display:inline-block;margin-top:12px}.detective-scroll{padding:12px;max-height:55dvh}}
+@media(max-width:560px){.hero h1{font-size:43px}.hero .intro{font-size:14px}.activity-heading h2,.puzzle-intro h2{font-size:37px}.detective-copy h3{font-size:27px}#puzzle-board{padding:7px;gap:5px}}

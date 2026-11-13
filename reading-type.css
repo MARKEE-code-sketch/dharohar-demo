@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;600;700&family=Instrument+Serif:ital@0;1&display=swap');
+/* Editorial display type with a humanist sans for reading and questions. */
+body{font-family:'DM Sans','Segoe UI',sans-serif;font-size:16px;font-weight:400}
+button,input,select{font-family:inherit}
+h1,h2,h3,.hero h1,.activity-heading h2,.puzzle-intro h2,.detective-copy h3,.repo-card h3,.object-card h3,.chat-header strong{font-family:'Instrument Serif','Palatino Linotype',Georgia,serif;letter-spacing:-.018em;font-weight:400}
+.hero h1{font-size:clamp(48px,6.8vw,100px);line-height:1.02;max-width:1250px}
+.hero .intro{font-size:17px;line-height:1.75;max-width:630px}
+.eyebrow,.hero .eyebrow,.activity-heading .eyebrow,.puzzle-intro .eyebrow{font-family:'DM Sans','Segoe UI',sans-serif;font-weight:500;letter-spacing:.025em;text-transform:none;font-size:12px}
+.activity-heading h2,.puzzle-intro h2{font-size:clamp(40px,4.7vw,66px)}
+.activity-heading>p:last-child,.puzzle-intro>p:last-child,.detective-copy p,.repo-card p,.archive-intro>p:last-child{font-size:16px!important;line-height:1.8!important;font-weight:400}
+.detective-copy .detective-note,.source-note{font-size:12px!important;line-height:1.65!important}
+.section-top>p,.ask-section p:not(.eyebrow){font-size:16px;line-height:1.8}
+.object-card h3,.repo-card h3{font-size:29px}.object-card>span{font-size:13px;line-height:1.6}.card-action{font-size:13px}
+.question-list{border-top:1px solid #beb7a7}.question-list button{padding:19px 6px;font-size:17px;font-weight:450;line-height:1.5;letter-spacing:-.015em;align-items:center}.question-list button:hover{background:#ffffff50}
+.chat-suggestions{gap:8px}.chat-suggestions button{font-size:13px;line-height:1.45;padding:9px 12px;min-height:42px;border-radius:6px;text-align:left;background:#fffaf2}
+.message{font-size:15px;line-height:1.8;padding:17px}.message a{font-size:12px;line-height:1.6}
+#question{font-size:14px}.chat-header strong{font-size:32px}.chat-header p,.persona-selector p{font-size:12px}
+#chat{height:800px;overflow:hidden}#chat .chat-header{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-shrink:0}
+#chat .chat-close{position:static;display:flex;align-items:center;gap:8px;min-width:80px;height:44px;width:auto;border:1px solid #b5b5a3;border-radius:4px;padding:10px;font-size:13px;flex-shrink:0}#chat .chat-close span{font-size:22px}
+#chat .chat-label,#chat .persona-selector,#chat .chat-suggestions,#chat-form,#chat .chat-footer{flex-shrink:0}#chat #messages{min-height:0}
+#persona-welcome{position:relative}#persona-welcome h2{padding-right:65px;font-size:42px}.persona-dismiss{position:absolute;right:20px;top:20px;min-height:40px;padding:8px 12px;border:1px solid #b5b5a3;border-radius:4px;font-size:13px;background:#fff}
+.persona-options strong{font-weight:500}.persona-options small{font-size:13px;line-height:1.5}
+@media(max-width:600px){.hero h1{font-size:51px}.hero .intro{font-size:15px}.activity-heading h2,.puzzle-intro h2{font-size:44px}.message{font-size:14px}.question-list button{font-size:16px}.chat-suggestions button{font-size:12px}.activity-heading>p:last-child,.puzzle-intro>p:last-child{font-size:15px!important}}
