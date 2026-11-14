@@ -1,3 +1,4 @@
+(() => {
 // Prepared examples only. No age or conversation is sent to a server.
 const personaExamples = {
   young: {
@@ -6,7 +7,7 @@ const personaExamples = {
     start:'Let us start with a small question: how did people find money to run a business? The formative-years article follows early merchants and their ways of raising money. We can take it one idea at a time.',
     share:'Imagine a business split into lots of tiny pieces. A share is one piece of ownership. Owning one does not mean you can take a chair from its office! It means you own a small part of the business. The formative-years article is our next stop for the history behind that idea.',
     paper:'Imagine writing down, "I borrowed five coins and will pay them back." The paper records a promise. Historical loan papers could record promises too, sometimes with a claim that could pass to someone else. That is different from a share, which represents ownership. The formative-years article explores these early ways of raising money.',
-    evidence:'Try being a document detective. Can you find a name, a date or an amount? Those clues help you ask who made the document and what it was for. Then read its archive description. An old-looking page alone cannot tell us the whole story.',
+    evidence:'Look closely at the document. Can you find a name, a date or an amount? Those clues help you ask who made the document and what it was for. Then read its archive description. An old-looking page alone cannot tell us the whole story.',
     trade:'A merchant buys and sells goods. To begin, they may need money for goods or a journey. People could put money together to help. Our formative-years article looks at early trade and financing.',
     cotton:'Cotton is used to make things such as clothes. Dharohar has a story about the cotton boom and share mania of 1861 to 1865. A boom means a rush of growth and excitement; a bust means a sharp fall. The article tells us what happened in this particular case.',
     pioneer:'Premchand Roychand was a stockbroker: someone who helped people buy and sell shares. His story has successes and setbacks. You can meet him in his archive profile.',
@@ -49,13 +50,13 @@ const selector=document.createElement('div');
 selector.className='persona-selector';
 selector.innerHTML='<label for="persona-style">Your guide</label><select id="persona-style"><option value="young">Young Explorer</option><option value="adult">Curious Adult</option><option value="seasoned">Seasoned Investor</option></select><p id="persona-description"></p>';
 document.querySelector('.chat-label').after(selector);
-function requestChatAccess(question) {
+window.requestChatAccess = function(question) {
   if(personaChosen)return true;
   pendingQuestion=question;
   if(!welcome.open)welcome.showModal();
   return false;
 }
-function personaReply(question) {
+window.personaReply = function(question) {
   const text=question.toLowerCase(), examples=personaExamples[activePersona];
   let topic,source=0;
   if(/roychand|pioneer/.test(text)){topic='pioneer';source=2;}
@@ -76,7 +77,7 @@ function setPersona(key) {
   document.querySelector('#persona-style').value=key;
   document.querySelector('#persona-description').textContent=examples.style;
   document.querySelector('#messages').replaceChildren();
-  addMessage(examples.start,'assistant',stories[examples.startSource]);
+  addMessage(examples.start,'assistant',window.ChatSources[examples.startSource]);
   document.querySelector('#question').value='';
   document.querySelectorAll('.chat-suggestions, .question-list').forEach(container=>{
     container.querySelectorAll('[data-question]').forEach((button,index)=>{
@@ -98,3 +99,5 @@ welcome.addEventListener('cancel',()=>{pendingQuestion='';});
 document.querySelector('#skip-persona').onclick=()=>choosePersona('adult');
 document.querySelector('#persona-style').onchange=e=>setPersona(e.target.value);
 setPersona('adult');
+
+})();

@@ -18,30 +18,10 @@ function openArtifact(index) {
   $('#artifact-source').textContent = index===0 ? 'Read original article ↗' : 'Find article in original collection ↗';
   $('#artifact').showModal();
 }
-// Simulated chat module. User text is inserted with textContent, never HTML.
-function openChat(question='') {
-  if(!requestChatAccess(question))return false;
-  if(!$('#chat').open)$('#chat').showModal();
-  $('#question').focus();
-  return true;
-}
-function addMessage(text,kind,source) {
-  const bubble = document.createElement('div'); bubble.className = 'message '+kind; bubble.textContent = text;
-  if(source){const a=document.createElement('a');a.href=source.url;a.textContent='Source: '+source.name+' ↗';a.target='_blank';a.rel='noopener';bubble.append(a);}
-  $('#messages').append(bubble); $('#messages').scrollTop=$('#messages').scrollHeight;
-}
-function answer(question) {
-  const q=question.trim();if(!q||!openChat(q))return;
-  addMessage(q,'user');
-  const reply=personaReply(q);
-  addMessage(reply.text,'assistant',stories[reply.source]);$('#question').value='';
-}
 // Wire the demo modules together.
 $$('[data-object]').forEach(b=>b.onclick=()=>openArtifact(Number(b.dataset.object)));
 $$('[data-filter]').forEach(b=>b.onclick=()=>{const filter=b.dataset.filter;$$('[data-filter]').forEach(x=>{x.classList.toggle('active',x===b);x.setAttribute('aria-pressed',x===b);});let count=0;$$('[data-object]').forEach(c=>{c.hidden=filter!=='all'&&c.dataset.category!==filter;if(!c.hidden)count++;});$('#result-count').textContent=count+' selected '+(count===1?'story':'stories');});
-$$('[data-chat]').forEach(b=>b.onclick=()=>openChat());$$('[data-question]').forEach(b=>b.onclick=()=>answer(b.dataset.question));
-$$('dialog .close').forEach(b=>b.onclick=()=>b.closest('dialog').close());
+$$('#artifact .close').forEach(b=>b.onclick=()=>b.closest('dialog').close());
 $('#zoom').onclick=()=>{const zoomed=$('#artifact-img').classList.toggle('zoomed');$('#zoom').textContent=zoomed?'Fit image':'Enlarge image';};
 $('#artifact-ask').onclick=()=>{$('#artifact').close();answer('Tell me about '+stories[artifactIndex].name);};
-$('#chat-form').onsubmit=e=>{e.preventDefault();answer($('#question').value);};
 

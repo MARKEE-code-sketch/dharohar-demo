@@ -19,7 +19,7 @@
   const board = $('puzzle-board');
   if (!board) return;
   const puzzles = [
-    {name:'Early debt instruments', image:'assets/early-debt.png', alt:'Two early debt instruments', copy:'This image shows two early debt instruments. Explore the document details above.', link:'#detective', action:'Examine the document'},
+    {name:'Early debt instruments', image:'assets/early-debt.png', alt:'Two early debt instruments', copy:'This image shows two early debt instruments. Read about these records in the Formative Years article.', link:'https://mism.org/pointer/indian-stock-market-formative-years', action:'Read about the document'},
     {name:'Journey of the BSE', image:stories[3].image, alt:'Journey of the BSE article image from Dharohar', copy:'You have put together the image from Journey of the BSE. Find the article in the original Dharohar collection.', link:stories[3].url, action:'Find the BSE article'}
   ];
   const descriptions = ['top left', 'top centre', 'top right', 'bottom left', 'bottom centre', 'bottom right'];
@@ -83,20 +83,12 @@
     $('puzzle-complete-copy').textContent = puzzle.copy;
     $('puzzle-inspect').href = puzzle.link;
     $('puzzle-inspect').textContent = puzzle.action;
-    $('puzzle-inspect').target = index === 0 ? '_self' : '_blank';
+    $('puzzle-inspect').target = '_blank';
     $('puzzle-inspect').rel = 'noopener';
     document.querySelectorAll('[data-puzzle]').forEach(button => button.setAttribute('aria-pressed', String(Number(button.dataset.puzzle) === index)));
     restart();
   }
   document.querySelectorAll('[data-puzzle]').forEach(button => button.onclick = () => selectPuzzle(Number(button.dataset.puzzle)));
-  $('puzzle-inspect').onclick = event => {
-    if (activePuzzle !== 0) return;
-    event.preventDefault();
-    const heading = $('detective-heading');
-    heading.tabIndex = -1;
-    heading.focus({preventScroll:true});
-    $('detective').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});
-  };
   $('puzzle-peek').setAttribute('aria-controls', 'puzzle-preview');
   $('puzzle-peek').setAttribute('aria-expanded', 'false');
   $('puzzle-peek').onclick = () => {
