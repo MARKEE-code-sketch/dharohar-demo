@@ -15,6 +15,22 @@
   chat.innerHTML='<div class="chat-header"><div><strong id="chat-title">Ask Dharohar</strong><p>Your guide to the archive</p></div><button class="chat-close" type="button" aria-label="Close chatbot">Close <span aria-hidden="true">&times;</span></button></div><div class="chat-label">Interactive preview &middot; Prepared answers</div><div id="messages" role="log" aria-live="polite"></div><div class="chat-suggestions"><button data-question=""></button><button data-question=""></button><button data-question=""></button></div><form id="chat-form"><label class="chat-sr-only" for="question">Your question</label><input id="question" placeholder="Ask about the archive..." autocomplete="off" required maxlength="400"><button aria-label="Send question">&uarr;</button></form><small class="chat-footer">A preview of the experience, not financial advice.</small>';
   document.body.append(chat,launcher);
   const $=selector=>chat.querySelector(selector);
+  const voiceButton=document.createElement('button');
+  voiceButton.id='talk-dharohar';voiceButton.type='button';
+  voiceButton.setAttribute('aria-label','Voice conversation, coming soon');
+  voiceButton.title='Voice conversation · Coming soon';
+  voiceButton.setAttribute('aria-expanded','false');voiceButton.setAttribute('aria-controls','talk-status');
+  voiceButton.innerHTML='<svg viewBox="0 0 28 28" width="26" height="26" aria-hidden="true"><path d="M5 12v4M9.5 8v12M14 4v20M18.5 8v12M23 11v6" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/></svg>';
+  $('#chat-form button').before(voiceButton);
+  const voiceStatus=document.createElement('p');voiceStatus.id='talk-status';
+  voiceStatus.setAttribute('role','status');voiceStatus.setAttribute('aria-live','polite');voiceStatus.hidden=true;
+  $('#chat-form').before(voiceStatus);
+  $('#talk-dharohar').onclick=()=>{
+    const expanded=$('#talk-dharohar').getAttribute('aria-expanded')!=='true';
+    $('#talk-dharohar').setAttribute('aria-expanded',String(expanded));
+    $('#talk-status').hidden=!expanded;
+    $('#talk-status').textContent=expanded?'Voice conversations are coming soon. For now, type your question below.':'';
+  };
   window.openChat=(question='')=>{
     if(!window.requestChatAccess(question))return false;
     if(!chat.open)chat.show();

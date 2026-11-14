@@ -37,3 +37,9 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+## SEBI milestone photographs
+
+SEBI Bhavan, October 2006: Jimmy vikas, CC BY-SA 3.0. Source: https://commons.wikimedia.org/wiki/File:SEBI_Bhavan.jpg . License: https://creativecommons.org/licenses/by-sa/3.0/ . Responsive display crops the image; the original file is unchanged.
+
+SEBI Silver Jubilee, 24 May 2013: Prime Minister’s Office / Press Information Bureau, Government of India. GODL-India. Source: https://commons.wikimedia.org/wiki/File:Manmohan_Singh_being_received_a_memento,_at_the_Silver_Jubilee_Celebrations_of_the_Securities_and_Exchange_Board_of_India_(SEBI),_in_Mumbai._The_Governor_of_Maharashtra.jpg . Responsive display crops the image; the original file is unchanged.
