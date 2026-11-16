@@ -880,8 +880,8 @@ setPersona('adult');
 })();
 
 </script><script>
-// Set by scripts/generate-katha-narration.py after audio generation succeeds.
-window.KathaNarration = null;
+// Saved Heart narration generated at 0.85 speed; no runtime AI calls.
+window.KathaNarration = {"voice": "Kokoro Heart", "files": ["assets/narration/katha-heart-1.wav", "assets/narration/katha-heart-2.wav", "assets/narration/katha-heart-3.wav"], "sceneDuration": 17};
 
 </script><script>
 // Saved story template. No model is called when a visitor plays this story.
@@ -979,7 +979,7 @@ window.KathaNarration = null;
   $('close-katha').onclick=()=>{pause();$('katha-dialog').close();};
   $('katha-dialog').addEventListener('close',pause);$('katha-dialog').addEventListener('cancel',pause);
   document.addEventListener('visibilitychange',()=>{if(document.hidden)pause();});
-  if(recording){populateVoices();$('speech-note').textContent='Microsoft Neerja narration. Captions always available.';}
+  if(recording){populateVoices();$('speech-note').textContent=recording.voice+' narration. Captions always available.';}
   else if(hasSpeech){populateVoices();speechSynthesis.addEventListener('voiceschanged',populateVoices);}
   else{$('narration').checked=false;$('narration').disabled=true;$('katha-voice').disabled=true;$('speech-note').textContent='Narration is unavailable on this browser. Read the captions or transcript.';}
   update();

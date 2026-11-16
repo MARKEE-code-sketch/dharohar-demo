@@ -43,3 +43,6 @@ SOFTWARE.
 SEBI Bhavan, October 2006: Jimmy vikas, CC BY-SA 3.0. Source: https://commons.wikimedia.org/wiki/File:SEBI_Bhavan.jpg . License: https://creativecommons.org/licenses/by-sa/3.0/ . Responsive display crops the image; the original file is unchanged.
 
 SEBI Silver Jubilee, 24 May 2013: Prime Minister’s Office / Press Information Bureau, Government of India. GODL-India. Source: https://commons.wikimedia.org/wiki/File:Manmohan_Singh_being_received_a_memento,_at_the_Silver_Jubilee_Celebrations_of_the_Securities_and_Exchange_Board_of_India_(SEBI),_in_Mumbai._The_Governor_of_Maharashtra.jpg . Responsive display crops the image; the original file is unchanged.
+
+## Kokoro narration
+Katha narration was synthesized with hexgrad/Kokoro-82M, voice af_heart, speed 0.85. Model license: Apache-2.0. Model and license: https://huggingface.co/hexgrad/Kokoro-82M . Hosted generation demo: https://huggingface.co/spaces/hexgrad/Kokoro-TTS . This site distributes generated WAV recordings, not model weights.

@@ -93,7 +93,7 @@
   $('close-katha').onclick=()=>{pause();$('katha-dialog').close();};
   $('katha-dialog').addEventListener('close',pause);$('katha-dialog').addEventListener('cancel',pause);
   document.addEventListener('visibilitychange',()=>{if(document.hidden)pause();});
-  if(recording){populateVoices();$('speech-note').textContent='Microsoft Neerja narration. Captions always available.';}
+  if(recording){populateVoices();$('speech-note').textContent=recording.voice+' narration. Captions always available.';}
   else if(hasSpeech){populateVoices();speechSynthesis.addEventListener('voiceschanged',populateVoices);}
   else{$('narration').checked=false;$('narration').disabled=true;$('katha-voice').disabled=true;$('speech-note').textContent='Narration is unavailable on this browser. Read the captions or transcript.';}
   update();
