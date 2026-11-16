@@ -1,5 +1,5 @@
 (() => {
-// Prepared examples only. No age or conversation is sent to a server.
+// Typed answers are prepared locally. Voice shares the selected guide style with Vapi.
 const personaExamples = {
   young: {
     name:'Young Explorer', style:'Small steps, everyday examples. No market knowledge needed.', startSource:0,
@@ -44,7 +44,7 @@ let pendingQuestion='';
 const welcome=document.createElement('dialog');
 welcome.id='persona-welcome';
 welcome.setAttribute('aria-labelledby','welcome-title');
-welcome.innerHTML=`<button class="close persona-dismiss" aria-label="Close guide selection">Close &times;</button><p class="eyebrow">ASK DHAROHAR</p><h2 id="welcome-title">Where shall we begin?</h2><p>Choose an age range for a suggested guide. You can switch styles at any time, whatever your age.</p><div class="persona-options"><button data-persona="young"><span>Under 18</span><strong>Young Explorer</strong><small>Small questions. Everyday examples.</small></button><button data-persona="adult"><span>18 to 59</span><strong>Curious Adult</strong><small>The people and events behind the market.</small></button><button data-persona="seasoned"><span>60+</span><strong>Seasoned Investor</strong><small>A closer look at institutions and evidence.</small></button></div><p class="persona-note">Optional. Nothing is stored or sent. This demo uses prepared answers.</p><button id="skip-persona" class="text-button">Skip and start exploring &rarr;</button>`;
+welcome.innerHTML=`<button class="close persona-dismiss" aria-label="Close guide selection">Close &times;</button><p class="eyebrow">ASK DHAROHAR</p><h2 id="welcome-title">Where shall we begin?</h2><p>Choose an age range for a suggested guide. You can switch styles at any time, whatever your age.</p><div class="persona-options"><button data-persona="young"><span>Under 18</span><strong>Young Explorer</strong><small>Small questions. Everyday examples.</small></button><button data-persona="adult"><span>18 to 59</span><strong>Curious Adult</strong><small>The people and events behind the market.</small></button><button data-persona="seasoned"><span>60+</span><strong>Seasoned Investor</strong><small>A closer look at institutions and evidence.</small></button></div><p class="persona-note">Optional. Typed questions use prepared answers. Starting voice shares your audio and guide style with Vapi.</p><button id="skip-persona" class="text-button">Skip and start exploring &rarr;</button>`;
 document.body.append(welcome);
 const selector=document.createElement('div');
 selector.className='persona-selector';
